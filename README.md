@@ -4,20 +4,43 @@
 
 ## 订阅地址
 
-```
-https://github.com/xxbb678/loon-config/raw/main/loon.conf
-```
+| 地址 | 国内可访问 | 说明 |
+|------|-----------|------|
+| `https://cdn.jsdelivr.net/gh/xxbb678/loon-config@main/loon.conf` | ✅ 推荐 | jsDelivr CDN，国内最稳 |
+| `https://github.com/xxbb678/loon-config/raw/main/loon.conf` | ⚠️ 可能需代理 | GitHub 官方 |
+| `https://raw.githubusercontent.com/xxbb678/loon-config/main/loon.conf` | ❌ 常被墙 | 原始地址，国内多被 DNS 污染 |
 
-一键导入（iPhone 点开自动唤起 Loon）：
-
-```
-https://www.nsloon.com/openloon/import?sub=https%3A%2F%2Fgithub.com%2Fxxbb678%2Floon-config%2Fraw%2Fmain%2Floon.conf
-```
-
-备用加速（jsDelivr，国内推荐）：
+**国内推荐用第一条（jsDelivr）**：
 
 ```
 https://cdn.jsdelivr.net/gh/xxbb678/loon-config@main/loon.conf
+```
+
+**备用 CDN**（jsDelivr 若不通可换）：
+
+```
+https://fastly.jsdelivr.net/gh/xxbb678/loon-config@main/loon.conf
+https://gcore.jsdelivr.net/gh/xxbb678/loon-config@main/loon.conf
+```
+
+**GitHub 代理**（jsDelivr 全不通时用）：
+
+```
+https://ghproxy.net/https://raw.githubusercontent.com/xxbb678/loon-config/main/loon.conf
+```
+
+**原始地址**（国外网络或已开代理时用）：
+
+```
+https://raw.githubusercontent.com/xxbb678/loon-config/main/loon.conf
+```
+
+## 一键导入
+
+iPhone 点开自动唤起 Loon：
+
+```
+https://www.nsloon.com/openloon/import?sub=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fxxbb678%2Floon-config%40main%2Floon.conf
 ```
 
 ## 导入方法
@@ -31,7 +54,7 @@ https://cdn.jsdelivr.net/gh/xxbb678/loon-config@main/loon.conf
 3. 粘贴上面的订阅地址
 4. 保存 → 启用 ✓ → 更新
 
-> ⚠️ 添加前需保证能访问 GitHub（先用旧配置连上网），否则拉取失败会报“请输入正确的URL”。
+> ⚠️ 添加前需保证能访问对应地址。若报「请填入正确的URL」，通常是网络不通或粘贴带了空格。先用旧配置连上网再添加。
 
 ## 填写订阅
 
@@ -63,7 +86,8 @@ https://cdn.jsdelivr.net/gh/xxbb678/loon-config@main/loon.conf
    - `🇭🇰 香港-Yuu**s**ei` 中的 us 被 US_Filter 误捕入美国组
 4. **OT_Filter 补上 HK**，修复香港节点重复出现在「其他节点」
 5. **新增 NodeSeek 走谷歌服务分组**（`DOMAIN-SUFFIX,nodeseek.com,谷歌服务`）
-6. **删除 MITM 证书私钥**（`ca-p12` / `ca-passphrase` / `skip-server-cert-verify`）
+6. **兜底策略 / 大陆网址 / 微信消息 改为直连**（规则层面指向 DIRECT）
+7. **删除 MITM 证书私钥**（`ca-p12` / `ca-passphrase` / `skip-server-cert-verify`）
 
 ## 安全说明
 
